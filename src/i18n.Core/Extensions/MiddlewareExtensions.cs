@@ -15,7 +15,7 @@ namespace i18n.Core.Extensions
         {
             var i18NLocalizationOptions = app.ApplicationServices.GetRequiredService<IOptions<I18NLocalizationOptions>>();
             var localizationOptions = app.ApplicationServices.GetRequiredService<IOptions<LocalizationOptions>>();
-            var requestLocationOptions = app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>();
+            var requestLocationOptions = app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptionsExtended>>();
             localizationOptions.Value.ResourcesPath = i18NLocalizationOptions.Value.LocaleDirectory;
 
             app.UseRequestLocalization(requestLocationOptions.Value);

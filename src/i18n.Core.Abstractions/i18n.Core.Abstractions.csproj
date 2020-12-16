@@ -8,6 +8,10 @@
     <IsTestProject>false</IsTestProject>
     <PackageId>i18n.Core.Abstractions</PackageId>
     <Description>Core abstractions package for the i18n project.</Description>
+    <PackageReleaseNotes>restored support to .net core 3.1
+added option requestLocalizationOptions.DefaultPotRequestCulture</PackageReleaseNotes>
+    <Version>3.0.0</Version>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

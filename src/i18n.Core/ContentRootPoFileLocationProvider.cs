@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using i18n.Core.Abstractions;
-using Microsoft.AspNetCore.Builder;
+using i18n.Core.Abstractions.Domain;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.FileProviders.Physical;
 using Microsoft.Extensions.Hosting;
@@ -24,10 +24,11 @@ namespace i18n.Core
         /// </summary>
         /// <param name="hostEnvironment"><see cref="IHostEnvironment"/>.</param>
         /// <param name="requestLocalizationOptions">The IOptions<RequestLocalizationOptions>.</param>
-        public ContentRootPoFileLocationProvider(IHostEnvironment hostEnvironment, IOptions<RequestLocalizationOptions> requestLocalizationOptions)
+        public ContentRootPoFileLocationProvider(IHostEnvironment hostEnvironment, IOptions<RequestLocalizationOptionsExtended> requestLocalizationOptions)
         {
             _contentRootPath = hostEnvironment.ContentRootPath;
-            _defaultCulture = requestLocalizationOptions.Value.DefaultRequestCulture.Culture;
+            //_defaultCulture = new CultureInfo("en-US"); //requestLocalizationOptions.Value.DefaultRequestCulture.Culture;
+            _defaultCulture = requestLocalizationOptions.Value.DefaultPotRequestCulture.Culture;
         }
 
         /// <inheritdocs />

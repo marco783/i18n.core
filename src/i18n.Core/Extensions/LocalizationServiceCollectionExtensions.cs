@@ -29,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="middleWareOptionsSetupAction">An action to configure the i18n.Core.Middleware.I18NMiddlewareOptions</param>
         [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
         public static IServiceCollection AddI18NLocalization([JetBrains.Annotations.NotNull] this IServiceCollection services,
-            [JetBrains.Annotations.NotNull] IHostEnvironment hostEnvironment, Action<RequestLocalizationOptions> requestLocalizationSetupAction = null, Action<I18NMiddlewareOptions> middleWareOptionsSetupAction = null)
+            [JetBrains.Annotations.NotNull] IHostEnvironment hostEnvironment, Action<RequestLocalizationOptionsExtended> requestLocalizationSetupAction = null, Action<I18NMiddlewareOptions> middleWareOptionsSetupAction = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (hostEnvironment == null) throw new ArgumentNullException(nameof(hostEnvironment));
