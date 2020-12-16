@@ -43,6 +43,7 @@ public void ConfigureServices(IServiceCollection services)
         var defaultCulture = supportedCultures.Single(x => x.Name == "en-US");
 
         options.DefaultRequestCulture = new RequestCulture(defaultCulture);
+        options.DefaultPotRequestCulture = new RequestCulture(defaultCulture);
         options.SupportedCultures = supportedCultures;
         options.SupportedUICultures = supportedCultures;
         options.RequestCultureProviders = new List<IRequestCultureProvider>
