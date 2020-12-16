@@ -159,7 +159,11 @@ namespace i18n.Core.Middleware
                 }
 
                 var stringContent = new StringContent(responseBodyTranslated, requestEncoding, contentType);
-                await stringContent.CopyToAsync(httpResponseBodyFeature.Stream, cancellationToken);
+#if NET50
+                await stringContent.CopyToAsync(httpResponseBodyFeature.Stream, cancellationToke);
+#else
+                await stringContent.CopyToAsync(httpResponseBodyFeature.Stream);
+#endif
 
                 return;
             }

@@ -1,5 +1,6 @@
 using System;
 using i18n.Core.Abstractions;
+using i18n.Core.Abstractions.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
@@ -24,7 +25,7 @@ namespace i18n.Core.PortableObject
         /// <param name="logger"></param>
         public PortableObjectStringLocalizerFactory(
             ILocalizationManager localizationManager,
-            IOptions<RequestLocalizationOptions> requestLocalizationOptions,
+            IOptions<RequestLocalizationOptionsExtended> requestLocalizationOptions,
             ILogger<PortableObjectStringLocalizerFactory> logger)
         {
             _localizationManager = localizationManager;
